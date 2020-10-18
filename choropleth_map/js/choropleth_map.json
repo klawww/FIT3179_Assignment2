@@ -1,0 +1,51 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title": "Fast Food Restaurants Distribution Across America per capital",
+  "width": 800,
+  "height": 600,
+  "data": {
+    "url": "https://raw.githubusercontent.com/klawww/FIT3179_Assignment2/main/ne_110m_admin_1_states_provinces.json",
+    "format": {
+      "type": "topojson",
+      "feature": "ne_110m_admin_1_states_provinces"
+    }
+  },
+  "transform": [
+    {
+      "lookup": "properties.postal",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/klawww/FIT3179_Assignment2/main/Fast_Food_Restaurant_By_State.csv"
+        },
+        "key": "province",
+        "fields": ["count_by_provinces"]
+      }
+    },
+    {
+      "calculate": "datum.count_by_provinces / 10",
+      "as": "Restaurants per 10 people"
+    }
+  ],
+  "projection": {"type": "albersUsa"},
+  "mark": {"type": "geoshape", "stroke": "white"},
+  "encoding": {
+    "color": {
+      "field": "Restaurants per 10 people",
+      "type": "quantitative",
+      "scale": {
+        "type": "threshold",
+        "domain": [5, 10, 30],
+        "range": ["#fee5d9", "#fcae91", "#fb6a4a", "#cb181d"]
+      }
+    },
+    "tooltip": [
+      {"field": "properties.name", "type": "nominal", "title": "State"},
+      {
+        "field": "count_by_provinces",
+        "title": "Count of Restaurants",
+        "type": "quantitative"
+      }
+    ]
+  },
+  "config": {}
+}
