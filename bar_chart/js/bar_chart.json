@@ -4,7 +4,7 @@
   "height": 600,
   "title": "Amount of Fast Food Restaurants Across America",
   "data": {
-    "url": "https://raw.githubusercontent.com/klawww/FIT3179_Assignment2/main/dot_map/data/Datafiniti_Fast_Food_Restaurants_May19.csv"
+    "url": "https://raw.githubusercontent.com/klawww/FIT3179_Assignment2/main/bar_chart/data/Datafiniti_Fast_Food_Restaurants_May19.csv"
   },
   "params": [
     {
