@@ -26,7 +26,17 @@
           ],
           "groupby": ["name"]
         },
-        {"filter": "datum.count_name >= 225"}
+        {
+          "lookup": "province",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/klawww/FIT3179_Assignment2/main/dot_map/data/State_Abbr.csv"
+            },
+            "key": "State_abbr",
+            "fields": ["State"]
+          }
+        },
+        {"filter": "datum.count_name >= 440"}
       ],
       "encoding": {
         "longitude": {"field": "longitude", "type": "quantitative"},
@@ -34,18 +44,42 @@
       },
       "layer": [
         {
-          "mark": {
-            "type": "circle"
+          "selection": {
+            "brand_highlight": {
+              "type": "multi", 
+              "fields": ["name"], 
+              "bind": "legend"
+            }
           },
+          "mark": {"type": "circle"},
           "encoding": {
-            "color": {"field": "name", "title": "Restaurant Name", "type": "nominal"},
-            "size": {"value": 20}, 
+            "color": {
+              "field": "name",
+              "title": "Restaurant Name",
+              "type": "nominal",
+              "scale": {
+                "range": ["#66c2a5", "#fc8d62", "#8da0cb", "#e78ac3", "#a6d854"]
+              }
+            },
+            "opacity": {
+              "condition": {"selection": "brand_highlight", "value": 1}, 
+              "value": 0.2
+            },
+            "size": {"value": 20},
             "tooltip": [
-              {"field": "name", "type": "nominal", "title": "Restaurant Name"}, 
-              {"field": "primaryCategories", "type": "nominal", "title": "Categories"},
-              {"field": "address", "type": "nominal", "title": "Restaurant Address"},
+              {"field": "name", "type": "nominal", "title": "Restaurant Name"},
+              {
+                "field": "address",
+                "type": "nominal",
+                "title": "Restaurant Address"
+              },
               {"field": "city", "type": "nominal", "title": "City"},
-              {"field": "province", "type": "nominal", "title": "State"}
+              {"field": "State", "type": "nominal", "title": "State"},
+              {
+                "field": "province",
+                "type": "nominal",
+                "title": "State Abbreviation"
+              }
             ]
           }
         }
