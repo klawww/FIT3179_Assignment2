@@ -1,0 +1,40 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 800,
+  "height": 600,
+  "title": "Amount of Fast Food Restaurants Across America",
+  "data": {
+    "url": "https://raw.githubusercontent.com/klawww/FIT3179_Assignment2/main/dot_map/data/Datafiniti_Fast_Food_Restaurants_May19.csv"
+  },
+  "params": [
+    {
+      "name": "restaurants_above", 
+      "value": 0, 
+      "bind": {
+        "input": "range", 
+        "min": 0, 
+        "max": 1000, 
+        "step": 10, 
+        "name": "Minimum Restaurants: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "aggregate": [{"op": "count", "field": "name", "as": "count_name"}],
+      "groupby": ["name"]
+    },
+    {"filter": "datum.count_name >= 100"}, 
+    {"filter": "datum.count_name > restaurants_above"}
+  ],
+  "mark": "bar",
+  "encoding": {
+    "y": {"field": "name", "sort": "-x", "title": "Restaurant Names"},
+    "x": {"field": "count_name", "type": "quantitative", "title": "Amount of Restaurants"}, 
+    "tooltip": [
+      {"field": "name", "type": "nominal", "title": "Restaurant Name"}, 
+      {"field": "count_name", "type": "quantitative", "title": "Amount of Restaurants"}
+    ]
+  },
+  "config": {}
+}
