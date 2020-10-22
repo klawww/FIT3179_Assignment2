@@ -1,1 +1,147 @@
-
+{ 
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json", 
+  "width": 600, 
+  "height": 500, 
+  "title": "Subway & McDonalds In Each Region", 
+  "data": { 
+    "url": "https://raw.githubusercontent.com/klawww/FIT3179_Assignment2/main/bubble_plot/data/Subway_McDonalds_Population.csv" 
+  },
+  "params": [
+    {
+      "name": "Population_Above",
+      "value": 0,
+      "bind": {
+        "input": "range",
+        "min": 0,
+        "max": 50000000,
+        "step": 100000,
+        "name": "Minimum Population: "
+      }
+    },
+    {
+      "name": "Region_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "South",
+          "West",
+          "Midwest",
+          "Northeast"
+        ],
+        "labels": [
+          "Show All",
+          "South",
+          "West",
+          "Midwest",
+          "Northeast"
+        ],
+        "name": "Region Selection: "
+      }
+    }
+  ],
+  "transform": [ 
+    {"filter": "datum.subway > 0"}, 
+    {"filter": "Region_selection == null || datum.region == Region_selection"},
+    {"filter": "datum.population > Population_Above"},
+    {
+      "calculate": "datum.subway/datum.population * 1000000",
+      "as": "Subway per 1,000,000 Population"
+    }
+  ], 
+  "encoding": { 
+    "x": { 
+      "field": "subway", 
+      "type": "quantitative", 
+      "title": "Subway", 
+      "axis": {"tickCount": 3}, 
+      "scale": {"type": "log", "domain": [1, 1000]}
+      }, 
+    "y": { 
+      "field": "mcdonalds", 
+      "type": "quantitative", 
+      "title": "McDonalds"
+    }
+  }, 
+  "layer": [
+    {
+      "selection": {
+        "region_highlight": {
+          "type": "multi", 
+          "fields": ["region"], 
+          "bind": "legend"
+        }
+      },
+      "mark": "circle", 
+      "encoding": {
+        "size": { 
+          "field": "population", 
+          "type": "quantitative", 
+          "scale": {
+            "type": "threshold", 
+            "domain": [500000, 1000000, 3000000, 5000000, 10000000], 
+            "range": [10, 50, 150, 200, 300, 400]
+          }, 
+          "legend": {"format": ".1s"}, 
+          "title": "Population"
+        },
+        "color": { 
+          "field": "region", 
+          "type": "nominal", 
+          "scale": {
+            "domain": [
+              "South", 
+              "West", 
+              "Midwest", 
+              "Northeast"
+            ], 
+            "range": [
+              "#e41a1c", 
+              "#984ea3", 
+              "#ff7f00", 
+              "#377eb8"
+            ]
+          }, 
+          "title": "Region" 
+        }, 
+        "opacity": {
+          "condition": {"selection": "region_highlight", "value": 0.8}, 
+          "value": 0.2
+        },
+        "tooltip": [
+          {"field": "region", "type": "nominal", "title": "Region"}, 
+          {"field": "state", "type": "nominal", "title": "State"}, 
+          {"field": "subway", "type": "quantitative", "format": ",", "title": "Subway"},
+          {"field": "mcdonalds", "type": "quantitative", "format": ",", "title": "McDonalds"},  
+          {"field": "population", "type": "quantitative", "format": ".1s", "title": "Population"}, 
+          {
+            "field": "Subway per 1,000,000 Population", 
+            "type": "quantitative", 
+            "format": ".2f"
+          }
+        ]
+      }
+    }, 
+    {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "middle",
+        "dx": -12,
+        "fontSize": 11.5,
+        "fontStyle": "italic"
+      },
+      "encoding": {
+        "text": {"field": "state", "type": "nominal"},
+        "color": {"value": "black"},
+        "opacity": {
+          "condition": {
+            "test": "datum['state'] == 'Wisconsin' || datum['state'] == 'Ohio' || datum['state'] == 'California' || datum['state'] == 'New York' || datum['state'] == 'Pennsylvania' || datum['state'] == 'Alaska'",
+            "value": 1
+          },
+          "value": 0
+        }
+      }
+    } 
+  ] 
+}
