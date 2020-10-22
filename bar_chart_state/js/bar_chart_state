@@ -4,7 +4,7 @@
   "height": 500,
   "title": "States Contain Most Subway",
   "data": {
-    "url": "https://raw.githubusercontent.com/klawww/FIT3179_Assignment2/main/Datafiniti_Fast_Food_Restaurants_May19.csv"
+    "url": "https://raw.githubusercontent.com/klawww/FIT3179_Assignment2/main/bar_chart_state/data/Datafiniti_Fast_Food_Restaurants_May19.csv"
   },
   "params": [
     {
@@ -46,7 +46,7 @@
       "lookup": "province",
       "from": {
         "data": {
-          "url": "https://raw.githubusercontent.com/klawww/FIT3179_Assignment2/main/dot_map/data/State_Abbr.csv"
+          "url": "https://raw.githubusercontent.com/klawww/FIT3179_Assignment2/main/bar_chart_state/data/State_Abbr.csv"
         },
         "key": "State_abbr",
         "fields": ["State"]
@@ -62,7 +62,7 @@
   ],
   "mark": "bar",
   "encoding": {
-    "x": {"field": "State", "sort": "x", "title": "States"},
+    "x": {"field": "State", "sort": "-y", "title": "States"},
     "y": {
       "field": "count_name",
       "type": "quantitative",
