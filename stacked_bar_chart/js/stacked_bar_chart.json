@@ -3,25 +3,89 @@
   "width": 500,
   "height": 400,
   "data": {
-    "url": "https://raw.githubusercontent.com/klawww/FIT3179_Assignment2/main/Datafiniti_Fast_Food_Restaurants_May19.csv"
+    "url": "https://raw.githubusercontent.com/klawww/FIT3179_Assignment2/main/stacked_bar_chart/data/Datafiniti_Fast_Food_Restaurants_May19.csv"
   },
+  "params": [
+    {
+      "name": "State_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "Alabama",
+          "California",
+          "Florida",
+          "Indiana",
+          "North Carolina",
+          "Ohio",
+          "Oregon",
+          "South Carolina",
+          "Texas",
+          "Virginia"
+        ],
+        "labels": [
+          "Show All",
+          "Alabama",
+          "California",
+          "Florida",
+          "Indiana",
+          "North Carolina",
+          "Ohio",
+          "Oregon",
+          "South Carolina",
+          "Texas",
+          "Virginia"
+        ],
+        "name": "State Selection"
+      }
+    }
+  ],
+  "transform": [
+    {
+      "lookup": "province",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/klawww/FIT3179_Assignment2/main/stacked_bar_chart/data/State_Abbr.csv"
+        },
+        "key": "State_abbr",
+        "fields": ["State"]
+      }
+    },
+    {
+      "aggregate": [{"op": "count", "field": "State", "as": "count_name"}],
+      "groupby": ["State", "name"]
+    }, 
+    {"filter": "datum.name == 'Subway' ||  datum.name == 'Taco Bell' || datum.name == 'Pizza Hut' || datum.name == 'Burger King'"}, 
+    {"filter": "datum.State != null"}, 
+    {"filter": "datum.State == 'Ohio' || datum.State == 'Florida' || datum.State == 'California' || datum.State == 'North Carolina' || datum.State == 'Indiana' || datum.State == 'Alabama' || datum.State == 'Texas' || datum.State == 'Virginia' || datum.State == 'South Carolina' || datum.State == 'Oregon'"}, 
+    {"filter": "State_selection == null || datum.State == State_selection"}
+  ],
+  "selection": { "brand_highlight": { "type": "multi", "fields": ["name"], "bind": "legend" } },
   "mark": "bar",
   "encoding": {
     "x": {
-      "timeUnit": "month",
-      "field": "date",
-      "type": "ordinal",
-      "title": "Month of the year"
+      "field": "State",
+      "type": "nominal",
+      "title": "States", 
+      "sort": "-y"
     },
-    "y": {"aggregate": "count", "type": "quantitative"},
+    "y": {
+    "field": "count_name",
+    "type": "quantitative", 
+    "title": "Fast Food Restaurants"
+    }, 
     "color": {
-      "field": "weather",
+      "field": "name",
       "type": "nominal",
       "scale": {
-        "domain": ["sun", "fog", "drizzle", "rain", "snow"],
-        "range": ["#e7ba52", "#c7c7c7", "#aec7e8", "#1f77b4", "#9467bd"]
+        "domain": ["Subway", "Taco Bell", "Pizza Hut", "Burger King"],
+        "range": ["#e7ba52", "#f03b20", "#1f77b4", "#9467bd"]
       },
-      "title": "Weather type"
+      "title": "Fast Food Brand"
+    }, 
+    "opacity": {
+      "condition": {"selection": "brand_highlight", "value": 0.9}, 
+      "value": 0.2
     }
   },
   "config": {}
