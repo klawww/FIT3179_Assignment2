@@ -1,0 +1,52 @@
+region,state,subway,mcdonalds,population
+South,Alabama,55,35,4903185
+West,Alaska,15,4,731545
+West,Arizona,14,32,7278717
+South,Arkansas,13,11,3017825
+West,California,76,72,39512223
+West,Colorado,11,13,5758736
+Northeast,Connecticut,0,0,3565287
+South,Delaware,2,2,973764
+South,District of Columbia,3,0,705749
+South,Florida,79,64,21477737
+South,Georgia,21,40,10617423
+West,Hawaii,9,12,1415872
+West,Idaho,6,2,1787065
+Midwest,Illinois,39,42,12671821
+Midwest,Indiana,79,29,6732219
+Midwest,Iowa,14,15,3155070
+Midwest,Kansas,13,14,2913314
+South,Kentucky,18,25,4467673
+South,Louisiana,28,22,4648794
+Northeast,Maine,0,0,0
+South,Maryland,19,18,6045680
+Northeast,Massachusetts,0,0,6949503
+Midwest,Michigan,27,42,9986857
+Midwest,Minnesota,9,9,5639632
+South,Mississippi,9,12,2976149
+Midwest,Missouri,29,25,6137428
+West,Montana,5,4,1068778
+Midwest,Nebraska,13,5,1934408
+West,Nevada,17,11,3080156
+Northeast,New Hampshire,0,0,0
+Northeast,New Jersey,0,0,8882190
+West,New Mexico,7,6,2096829
+Northeast,New York,22,33,19453561
+South,North Carolina,79,34,10488084
+Midwest,North Dakota,3,1,762062
+Midwest,Ohio,143,50,11689100
+South,Oklahoma,11,13,3956971
+West,Oregon,51,21,4217737
+Northeast,Pennsylvania,26,28,12801989
+Northeast,Rhode Island,0,0,0
+South,South Carolina,37,16,5148714
+Midwest,South Dakota,3,0,884659
+South,Tennessee,28,18,6833174
+South,Texas,49,53,28995881
+West,Utah,5,7,3205958
+Northeast,Vermont,0,0,0
+South,Virginia,38,30,8535519
+West,Washington,39,17,7614893
+South,West Virginia,26,8,1792147
+Midwest,Wisconsin,18,0,5822434
+West,Wyoming,2,1,578759
