@@ -1,0 +1,51 @@
+region,state,subway,mcdonalds
+South,Alabama,55,35
+West,Alaska,15,4
+West,Arizona,14,32
+South,Arkansas,13,11
+West,California,76,72
+West,Colorado,11,13
+Northeast,Connecticut,0,0
+South,Delaware,2,2
+South,Florida,79,64
+South,Georgia,21,40
+West,Hawaii,9,12
+West,Idaho,6,2
+Midwest,Illinois,39,42
+Midwest,Indiana,79,29
+Midwest,Iowa,14,15
+Midwest,Kansas,13,14
+South,Kentucky,18,25
+South,Louisiana,28,22
+Northeast,Maine,0,0
+South,Maryland,19,18
+Northeast,Massachusetts,0,0
+Midwest,Michigan,27,42
+Midwest,Minnesota,9,9
+South,Mississippi,9,12
+Midwest,Missouri,29,25
+West,Montana,5,4
+Midwest,Nebraska,13,5
+West,Nevada,17,11
+Northeast,New Hampshire,0,0
+Northeast,New Jersey,0,0
+West,New Mexico,7,6
+Northeast,New York,22,33
+South,North Carolina,79,34
+Midwest,North Dakota,3,1
+Midwest,Ohio,143,50
+South,Oklahoma,11,13
+West,Oregon,51,21
+Northeast,Pennsylvania,26,28
+Northeast,Rhode Island,0,0
+South,South Carolina,37,16
+Midwest,South Dakota,3,0
+South,Tennessee,28,18
+South,Texas,49,53
+West,Utah,5,7
+Northeast,Vermont,0,0
+South,Virginia,38,30
+West,Washington,39,17
+South,West Virginia,26,8
+Midwest,Wisconsin,18,0
+West,Wyoming,2,1
