@@ -1,0 +1,81 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 600,
+  "height": 500,
+  "title": "States Contain Most Subway",
+  "data": {
+    "url": "https://raw.githubusercontent.com/klawww/FIT3179_Assignment2/main/Datafiniti_Fast_Food_Restaurants_May19.csv"
+  },
+  "params": [
+    {
+      "name": "State_selection", 
+      "bind": {
+        "input": "select", 
+        "options": [
+          null, 
+          "Alabama", 
+          "California", 
+          "Florida", 
+          "Illinois", 
+          "Indiana", 
+          "North Carolina", 
+          "Ohio", 
+          "Oregon", 
+          "Texas", 
+          "Washington"
+        ], 
+        "labels": [
+          "Show All", 
+          "Alabama", 
+          "California", 
+          "Florida", 
+          "Illinois", 
+          "Indiana", 
+          "North Carolina", 
+          "Ohio", 
+          "Oregon", 
+          "Texas", 
+          "Washington"
+        ], 
+        "name": "State Selection"
+      }
+    }
+  ],
+  "transform": [
+    {
+      "lookup": "province",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/klawww/FIT3179_Assignment2/main/dot_map/data/State_Abbr.csv"
+        },
+        "key": "State_abbr",
+        "fields": ["State"]
+      }
+    }, 
+    {
+      "aggregate": [{"op": "count", "field": "State", "as": "count_name"}],
+      "groupby": ["State", "name"]
+    }, 
+    {"filter": "datum.name == 'Subway'"},
+    {"filter": "datum.count_name > 38"}, 
+    {"filter": "State_selection == null || datum.State == State_selection"}
+  ],
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "State", "sort": "x", "title": "States"},
+    "y": {
+      "field": "count_name",
+      "type": "quantitative",
+      "title": "Amount of Subway"
+    },
+    "tooltip": [
+      {"field": "name", "type": "nominal", "title": "Restaurant Name"},
+      {
+        "field": "count_name",
+        "type": "quantitative",
+        "title": "Amount of Restaurants"
+      }
+    ]
+  },
+  "config": {}
+}
