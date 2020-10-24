@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 450,
+  "width": 500,
   "height": 350,
   "title": "Fast Food Restaurants Distribution",
   "projection": {"type": "albersUsa"},
