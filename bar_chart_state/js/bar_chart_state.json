@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 500,
-  "height": 400,
+  "width": 300,
+  "height": 200,
   "title": "States Contain Most Subway",
   "data": {
     "url": "https://raw.githubusercontent.com/klawww/FIT3179_Assignment2/main/bar_chart_state/data/Datafiniti_Fast_Food_Restaurants_May19.csv"
