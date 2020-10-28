@@ -1,6 +1,11 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "title": "Fast Food Restaurants Distribution Across America per capital",
+  "title": {
+    "Fast Food Restaurants Distribution Across America per capital",
+    "font": "Calibri",
+    "fontSize": 20,
+    "align": "center"
+  },
   "width": 450,
   "height": 350,
   "data": {
