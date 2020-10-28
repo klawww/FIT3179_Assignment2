@@ -3,7 +3,7 @@
   "width": 200,
   "height": 200,
   "title": {
-    "States Contain Most Subway",
+    "text": "States Contain Most Subway",
     "font": "Calibri",
     "fontSize": 16,
     "align": "center"
