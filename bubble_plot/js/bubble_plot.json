@@ -2,7 +2,12 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json", 
   "width": 450, 
   "height": 350, 
-  "title": "Subway & McDonalds In Each Region", 
+  "title": {
+    "text": "Subway & McDonalds In Each Region", 
+    "font": "Calibri",
+    "fontSize": 20,
+    "align": "center"
+  }, 
   "data": { 
     "url": "https://raw.githubusercontent.com/klawww/FIT3179_Assignment2/main/bubble_plot/data/Subway_McDonalds_Population.csv" 
   },
