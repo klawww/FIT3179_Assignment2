@@ -2,7 +2,12 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "width": 500,
   "height": 350,
-  "title": "Fast Food Restaurants Distribution",
+  "title": {
+    "text": "Subway & McDonalds In Each Region", 
+    "font": "Calibri",
+    "fontSize": 20,
+    "align": "center"
+  },
   "projection": {"type": "albersUsa"},
   "layer": [
     {
