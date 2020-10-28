@@ -2,6 +2,13 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "width": 450,
   "height": 350,
+  "title": {
+    "text": "Top 4 Fast Food Brands Across America", 
+    "font": "Calibri",
+    "fontSize": 20,
+    "align": "center"
+    },
+  }
   "data": {
     "url": "https://raw.githubusercontent.com/klawww/FIT3179_Assignment2/main/stacked_bar_chart/data/Datafiniti_Fast_Food_Restaurants_May19.csv"
   },
