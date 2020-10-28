@@ -5,7 +5,7 @@
   "title": {
     "text": "Fast Food Restaurants Distribution",
     "font": "Calibri",
-    "fontSize": 16,
+    "fontSize": 20,
     "align": "center"
     },
   "projection": {"type": "albersUsa"},
