@@ -132,20 +132,35 @@
         "type": "text",
         "align": "right",
         "baseline": "middle",
-        "dx": -12,
+        "dx": -10,
         "fontSize": 11.5,
         "fontStyle": "italic"
       },
       "encoding": {
         "text": {"field": "state", "type": "nominal"},
-        "color": {"value": "black"},
+        "color": {
+          "field": "region", 
+          "type": "nominal"
+        },
         "opacity": {
           "condition": {
             "test": "datum['state'] == 'Wisconsin' || datum['state'] == 'Ohio' || datum['state'] == 'California' || datum['state'] == 'New York' || datum['state'] == 'Pennsylvania' || datum['state'] == 'Alaska'",
             "value": 1
           },
           "value": 0
-        }
+        }, 
+        "tooltip": [
+          {"field": "region", "type": "nominal", "title": "Region"}, 
+          {"field": "state", "type": "nominal", "title": "State"}, 
+          {"field": "subway", "type": "quantitative", "format": ",", "title": "Subway"},
+          {"field": "mcdonalds", "type": "quantitative", "format": ",", "title": "McDonalds"},  
+          {"field": "population", "type": "quantitative", "format": ".1s", "title": "Population"}, 
+          {
+            "field": "Subway per 1,000,000 Population", 
+            "type": "quantitative", 
+            "format": ".2f"
+          }
+        ]
       }
     } 
   ] 
