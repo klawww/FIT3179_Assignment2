@@ -11,26 +11,12 @@
   "data": {
     "url": "https://raw.githubusercontent.com/klawww/FIT3179_Assignment2/main/bar_chart/data/Datafiniti_Fast_Food_Restaurants_May19.csv"
   },
-  "params": [
-    {
-      "name": "restaurants_above", 
-      "value": 0, 
-      "bind": {
-        "input": "range", 
-        "min": 0, 
-        "max": 1000, 
-        "step": 10, 
-        "name": "Minimum Restaurants: "
-      }
-    }
-  ],
   "transform": [
     {
       "aggregate": [{"op": "count", "field": "name", "as": "count_name"}],
       "groupby": ["name"]
     },
-    {"filter": "datum.count_name >= 220"}, 
-    {"filter": "datum.count_name > restaurants_above"}
+    {"filter": "datum.count_name >= 220"}
   ],
   "mark": "bar",
   "encoding": {
