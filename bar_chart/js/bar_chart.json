@@ -21,7 +21,16 @@
   "mark": "bar",
   "encoding": {
     "y": {"field": "name", "sort": "-x", "title": "Restaurant Names"},
-    "x": {"field": "count_name", "type": "quantitative", "title": "Amount of Restaurants"}, 
+    "x": {"field": "count_name", "type": "quantitative", "title": "Amount of Restaurants"},
+    "color": {
+      "field": "name",
+      "type": "nominal",
+      "scale": {
+        "domain": ["Subway", "McDonald's", "Taco Bell", "Pizza Hut", "Burger King", "KFC", "Wendy's", "Dairy Queen", "Domino's Pizza", "Sonic Drive-In"],
+        "range": ["#e78ac3", "steelblue", "#a6d854", "#8da0cb", "#66c2a5", "steelblue", "steelblue", "steelblue","steelblue", "steelblue"]
+      }, 
+      "legend": null
+    }, 
     "tooltip": [
       {"field": "name", "type": "nominal", "title": "Restaurant Name"}, 
       {"field": "count_name", "type": "quantitative", "title": "Amount of Restaurants"}
