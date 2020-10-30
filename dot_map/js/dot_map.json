@@ -41,7 +41,8 @@
             "fields": ["State"]
           }
         },
-        {"filter": "datum.count_name >= 440"}
+        {"filter": "datum.count_name >= 440"}, 
+        {"filter": "datum.address != '3704 N Roosevelt Blvd'"}
       ],
       "encoding": {
         "longitude": {"field": "longitude", "type": "quantitative"},
