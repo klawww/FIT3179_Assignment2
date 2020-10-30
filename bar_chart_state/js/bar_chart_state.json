@@ -16,29 +16,49 @@
       "lookup": "province",
       "from": {
         "data": {
-          "url": "https://raw.githubusercontent.com/klawww/FIT3179_Assignment2/main/bar_chart_state/data/State_Abbr.csv"
+          "url": "https://raw.githubusercontent.com/klawww/FIT3179_Assignment2/main/bar_chart_state/data/State_Abbr_Region.csv"
         },
-        "key": "State_abbr",
-        "fields": ["State"]
+        "key": "state_abbr",
+        "fields": ["state", "region"]
       }
     }, 
     {
-      "aggregate": [{"op": "count", "field": "State", "as": "count_name"}],
-      "groupby": ["State", "name"]
+      "aggregate": [{"op": "count", "field": "state", "as": "count_name"}],
+      "groupby": ["state", "name", "region"]
     }, 
     {"filter": "datum.name == 'Subway'"},
     {"filter": "datum.count_name > 38"}
   ],
   "mark": "bar",
   "encoding": {
-    "y": {"field": "State", "sort": "-x", "title": "States"},
+    "y": {"field": "state", "sort": "-x", "title": "States"},
     "x": {
       "field": "count_name",
       "type": "quantitative",
       "title": "Amount of Subway"
     },
+    "color": { 
+      "field": "region", 
+      "type": "nominal", 
+      "scale": {
+        "domain": [
+          "South", 
+          "West", 
+          "Midwest", 
+          "Northeast"
+        ], 
+        "range": [
+          "#e41a1c", 
+          "#984ea3", 
+          "#ff7f00", 
+          "#377eb8"
+        ]
+      }, 
+      "legend": null
+    },
     "tooltip": [
       {"field": "name", "type": "nominal", "title": "Restaurant Name"},
+      {"field": "region", "type": "nominal", "title": "Region"}, 
       {
         "field": "count_name",
         "type": "quantitative",
