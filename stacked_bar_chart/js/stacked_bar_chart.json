@@ -69,13 +69,13 @@
   "selection": { "brand_highlight": { "type": "multi", "fields": ["name"], "bind": "legend" } },
   "mark": "bar",
   "encoding": {
-    "x": {
+    "y": {
       "field": "State",
       "type": "nominal",
       "title": "States", 
-      "sort": "-y"
+      "sort": "-x"
     },
-    "y": {
+    "x": {
     "field": "count_name",
     "type": "quantitative", 
     "title": "Fast Food Restaurants"
@@ -92,7 +92,12 @@
     "opacity": {
       "condition": {"selection": "brand_highlight", "value": 0.9}, 
       "value": 0.2
-    }
+    }, 
+    "tooltip": [
+      {"field": "State", "type": "nominal"}, 
+      {"field": "name", "type": "nominal", "title": "Fast Food Brand"},
+      {"field": "count_name", "type": "quantitative", "title": "Amount of Restaurants"}
+    ]
   },
   "config": {}
 }
