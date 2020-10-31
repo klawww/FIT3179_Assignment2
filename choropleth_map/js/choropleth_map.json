@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "title": {
-    "text": "Fast Food Restaurants Distribution Across America per 500,000 Population",
+    "text": "Fast Food Restaurants Across America per 500,000 Population",
     "font": "Calibri",
     "fontSize": 20,
     "align": "center"
