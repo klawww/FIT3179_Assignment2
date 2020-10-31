@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 350,
+  "width": 400,
   "height": 450,
   "title": {
     "text": "Top 5 Fast Food Brands Across America", 
