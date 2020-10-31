@@ -27,7 +27,7 @@
       "type": "nominal",
       "scale": {
         "domain": ["Subway", "McDonald's", "Taco Bell", "Pizza Hut", "Burger King", "KFC", "Wendy's", "Dairy Queen", "Domino's Pizza", "Sonic Drive-In"],
-        "range": ["#e78ac3", "#fc8d62", "#a6d854", "#8da0cb", "#66c2a5", "steelblue", "steelblue", "steelblue","steelblue", "steelblue"]
+        "range": ["#e78ac3", "#fc8d62", "#a6d854", "#8da0cb", "#66c2a5", "lightgrey", "lightgrey", "lightgrey","lightgrey", "lightgrey"]
       }, 
       "legend": null
     }, 
