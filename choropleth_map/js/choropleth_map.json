@@ -71,7 +71,7 @@
         "format": "0.1f",
         "title": "Restaurants per 500,000 population"
       }, 
-      {"field": "population", "type": "quantitative", "title": "Population"}
+      {"field": "population", "format": ",", "type": "quantitative", "title": "Population"}
     ]
   },
   "config": {}
