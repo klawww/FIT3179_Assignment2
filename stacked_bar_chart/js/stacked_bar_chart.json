@@ -3,13 +3,13 @@
   "width": 350,
   "height": 450,
   "title": {
-    "text": "Top 4 Fast Food Brands Across America", 
+    "text": "Top 5 Fast Food Brands Across America", 
     "font": "Calibri",
     "fontSize": 20,
     "align": "center"
   },
   "data": {
-    "url": "https://raw.githubusercontent.com/klawww/FIT3179_Assignment2/main/stacked_bar_chart/data/Datafiniti_Fast_Food_Restaurants_May19.csv"
+    "url": "https://raw.githubusercontent.com/klawww/FIT3179_Assignment2/main/stacked_bar_chart/Datafiniti_Fast_Food_Restaurants_May19.csv"
   },
   "params": [
     {
@@ -61,7 +61,7 @@
       "aggregate": [{"op": "count", "field": "State", "as": "count_name"}],
       "groupby": ["State", "name"]
     }, 
-    {"filter": "datum.name == 'Subway' ||  datum.name == 'Taco Bell' || datum.name == 'Pizza Hut' || datum.name == 'Burger King'"}, 
+    {"filter": "datum.name == 'Subway' || datum.name == 'McDonalds' ||  datum.name == 'Taco Bell' || datum.name == 'Pizza Hut' || datum.name == 'Burger King'"}, 
     {"filter": "datum.State != null"}, 
     {"filter": "datum.State == 'Ohio' || datum.State == 'Florida' || datum.State == 'California' || datum.State == 'North Carolina' || datum.State == 'Indiana' || datum.State == 'Alabama' || datum.State == 'Texas' || datum.State == 'Virginia' || datum.State == 'South Carolina' || datum.State == 'Oregon'"}, 
     {"filter": "State_selection == null || datum.State == State_selection"}
@@ -84,8 +84,8 @@
       "field": "name",
       "type": "nominal",
       "scale": {
-        "domain": ["Subway", "Taco Bell", "Pizza Hut", "Burger King"],
-        "range": ["#e78ac3", "#a6d854", "#8da0cb", "#66c2a5"]
+        "domain": ["Subway", "McDonalds", "Taco Bell", "Pizza Hut", "Burger King"],
+        "range": ["#e78ac3", "#fc8d62", "#a6d854", "#8da0cb", "#66c2a5"]
       },
       "title": "Fast Food Brand"
     }, 
