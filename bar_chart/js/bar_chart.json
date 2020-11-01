@@ -36,5 +36,11 @@
       {"field": "count_name", "type": "quantitative", "title": "Amount of Restaurants"}
     ]
   },
-  "config": {}
+  "config": {
+    "axis": {
+      "labelFont": "Calibri", 
+      "titleFont": "Calibri", 
+      "titleFontSize": 15
+    }
+  }
 }
