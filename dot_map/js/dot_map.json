@@ -93,5 +93,11 @@
       ]
     }
   ],
-  "config": {}
+  "config": {
+    "legend": {
+      "labelFont": "Calibri", 
+      "titleFont": "Calibri", 
+      "titleFontSize": 12
+    }
+  }
 }
