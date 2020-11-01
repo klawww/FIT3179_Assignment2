@@ -65,7 +65,7 @@
     "y": { 
       "field": "mcdonalds", 
       "type": "quantitative", 
-      "title": "McDonalds", 
+      "title": "McDonald's", 
       "scale": {"domain": [0, 80]}
     }
   }, 
@@ -164,5 +164,17 @@
         ]
       }
     } 
-  ] 
+  ], 
+  "config": {
+    "axis": {
+      "labelFont": "Calibri", 
+      "titleFont": "Calibri", 
+      "titleFontSize": 14
+    }, 
+    "legend": {
+      "labelFont": "Calibri", 
+      "titleFont": "Calibri", 
+      "titleFontSize": 12
+    }
+  }
 }
