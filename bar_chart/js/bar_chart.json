@@ -20,7 +20,7 @@
   ],
   "mark": "bar",
   "encoding": {
-    "y": {"field": "name", "sort": "-x", "title": "Restaurant Names"},
+    "y": {"field": "name", "sort": "-x", "title": "Brand Names"},
     "x": {"field": "count_name", "type": "quantitative", "title": "Amount of Restaurants"},
     "color": {
       "field": "name",
@@ -40,7 +40,7 @@
     "axis": {
       "labelFont": "Calibri", 
       "titleFont": "Calibri", 
-      "titleFontSize": 15
+      "titleFontSize": 14
     }
   }
 }
