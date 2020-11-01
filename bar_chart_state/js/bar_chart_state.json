@@ -66,5 +66,11 @@
       }
     ]
   },
-  "config": {}
+  "config": {
+    "axis": {
+      "labelFont": "Calibri", 
+      "titleFont": "Calibri", 
+      "titleFontSize": 14
+    }
+  }
 }
